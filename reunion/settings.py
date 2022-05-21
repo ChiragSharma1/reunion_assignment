@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+import os
+import django_heroku
 
 from pathlib import Path
 
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-fm2w8b2fo-a&^2fwe+y1e%(wwude@%)t3+7e3v1g$z0b#%0r#5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['reunion-assignment-app.herokuapp.com']
 
 
 # Application definition
@@ -80,10 +82,10 @@ WSGI_APPLICATION = 'reunion.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'reunion',
-        'USER': 'chirag',
-        'PASSWORD': 'Chirag@31',
-        'HOST': 'localhost',
+        'NAME': 'd5t8eapl3kejep',
+        'USER': 'trlpxmikmnuggr',
+        'PASSWORD': '9756dc7968cd02b62b77034dfd755c71b14972f9b447cb4b0afa905d34bf303a',
+        'HOST': 'ec2-52-3-2-245.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -124,6 +126,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
